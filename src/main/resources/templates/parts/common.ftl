@@ -1,11 +1,12 @@
+<#macro page>
 <!DOCTYPE HTML>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Spring Security Example</title>
 </head>
 <body>
-<h1>Welcome!</h1>
-
-<p>Click <a href="/main">here</a> to see a greeting.</p>
+<#nested>
 </body>
 </html>
+</#macro>
