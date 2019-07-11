@@ -54,4 +54,8 @@ public class Message {
     public void setAuthor(User author) {
         this.author = author;
     }
+
+    public Integer getId() {
+        return id;
+    }
 }

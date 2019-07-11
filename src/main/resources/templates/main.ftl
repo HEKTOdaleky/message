@@ -13,13 +13,13 @@
     </form>
 </div>
 <div>Message list</div>
-<form method="post" action="filter">
-    <input type="text" name="filter">
-    <input type="hidden" name="_csrf" value="${_csrf.token}">
+<form method="get" action="/main">
+    <input type="text" name="filter" value=${filter}>
     <button type="submit">Find</button>
 </form>
     <#list messages as message>
     <div>
+        <b>${message.id}</b>
         <span>${message.text}</span>
         <i>${message.tag}</i>
         <strong>${message.authorName}</strong>
