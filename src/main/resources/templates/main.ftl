@@ -6,7 +6,7 @@
     <a href="/user/">Edit User</a>
 </div>
 <div>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <input type="text" name="text" placeholder="Input message"/>
         <input type="hidden" name="_csrf" value="${_csrf.token}">
         <input type="text" name="tag" placeholder="Tag">

@@ -23,7 +23,7 @@ public class MainController {
     @Autowired
     private MessageRepo messageRepo;
 
-    @Value("$(upload.path)")
+    @Value("${upload.path}")
     private String uploadPath;
 
     @GetMapping("/")
@@ -59,7 +59,7 @@ public class MainController {
         }
         Message message = new Message(text, tag, user);
 
-        if (file != null) {
+        if (file != null && !file.getOriginalFilename().isEmpty()) {
             File uploadDir = new File(uploadPath);
 
             if (!uploadDir.exists()) {
@@ -70,6 +70,8 @@ public class MainController {
             String resultFilename = uuidFile + "." + file.getOriginalFilename();
 
                 file.transferTo(new File(uploadPath + "/" + resultFilename));
+
+                message.setFilename(resultFilename);
         }
 
         messageRepo.save(message);
