@@ -1,6 +1,6 @@
 <#import "parts/common.ftl" as C>
 
 <@C.page>
-<h1>Welcome!</h1>
-<p>Click <a href="/main">here</a> to see a greeting.</p>
+<h5>Hello guest</h5>
+<p>This is simple clone of tweater</p>
 </@C.page>

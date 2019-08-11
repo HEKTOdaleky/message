@@ -26,6 +26,10 @@ public class User implements UserDetails {
         return username;
     }
 
+    public boolean getAdmin(){
+        return roles.contains(Role.ADMIN);
+    }
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
