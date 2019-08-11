@@ -3,6 +3,7 @@
 <@C.page>
 <div>
 <@L.logout/>
+    <a href="/user/">Edit User</a>
 </div>
 <div>
     <form method="post">
@@ -14,7 +15,7 @@
 </div>
 <div>Message list</div>
 <form method="get" action="/main">
-    <input type="text" name="filter" value=${filter}>
+    <input type="text" name="filter" value=${filter?ifExists}>
     <button type="submit">Find</button>
 </form>
     <#list messages as message>
