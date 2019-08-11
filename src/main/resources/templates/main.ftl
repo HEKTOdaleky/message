@@ -10,6 +10,8 @@
         <input type="text" name="text" placeholder="Input message"/>
         <input type="hidden" name="_csrf" value="${_csrf.token}">
         <input type="text" name="tag" placeholder="Tag">
+
+        <input type="file" name="file">
         <button type="submit">Add</button>
     </form>
 </div>
@@ -24,6 +26,11 @@
         <span>${message.text}</span>
         <i>${message.tag}</i>
         <strong>${message.authorName}</strong>
+        <div>
+            <#if message.filename??>
+                <img src="/img/${message.filename}">
+            </#if>
+        </div>
     </div>
     <#else>
         No messages
